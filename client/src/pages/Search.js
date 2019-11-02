@@ -1,12 +1,8 @@
 import React from 'react';
-// import React, { Component } from "react";
-// import API from '../utils/API';
-import axios from 'axios'
-// import Jumbotron from "../components/Jumbotron";
 
-//  
-// class Search extends Component
-export default class Books extends React.Component {
+import axios from 'axios'
+
+export default class Search extends React.Component {
     state = {
         books: [],
 
@@ -20,9 +16,9 @@ export default class Books extends React.Component {
 
         })
             .then(res => {
-                console.log(res);
+               
                 this.setState({ books: res.data.items })
-                // console.log(res.data.items[0].volumeInfo.imageLinks.smallThumbnail)
+              
 
             })
             .catch(err => console.log(err));
@@ -38,15 +34,6 @@ export default class Books extends React.Component {
 
     }
 
-    // addBook = () => {
-    //     API.addBook({
-    //         title: this.state.title,
-    //         author: this.state.author,
-    //         description: this.state.description,
-    //     }).then(response => {
-    //         console.log(response)
-    //     })
-    // }
 
     render() {
         return (
